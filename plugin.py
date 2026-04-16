@@ -658,7 +658,7 @@ class BasePlugin:
             
         k='OPEN'; dev=DEVS[k]; var=getattr(v, 'is_locked', None)
         if var != None:
-            if self.verbose: Domoticz.Status(f"{k}={var}")
+            if self.verbose: Domoticz.Status(f"{k}: is_locked={var}")
             nValue=1 if var else 0
             sValue="Unlocked" if var else "Locked"
             unit=base+dev[0]; self.getDevID(unit); self.update(unit, nValue, sValue)
